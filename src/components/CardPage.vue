@@ -14,6 +14,10 @@
         <div class="vote_count">
           {{ vote_count }}
         </div>
+        <!-- TODO cercare moto per inserire immagine -->
+        <!-- <div class="poster_path">
+          {{ poster_path }}
+        </div> -->
       </div>
     </div>
   </div>
@@ -28,6 +32,7 @@ export default {
     original_title: String,
     original_language: String,
     vote_count: Number,
+    poster_path: String,
   },
 };
 </script>
