@@ -2,11 +2,20 @@
   <header>
     <h1>BOOFLIX</h1>
     <div class="search_bar">
-      <input
-        class="search_input m-3"
-        placeholder="Scrivi qui..."
+      <label for="search">
+        <input
+          id="search"
+          v-model="searchString"
+          type="text"
+          name="search"
+          placeholder="Scrivi qui..."
+          @keyup.enter="search"
+        >
+      </label>
+      <button
+        class="btn btn-danger mx-1"
+        @click="search"
       >
-      <button class="btn btn-danger">
         Search
       </button>
     </div>
@@ -17,8 +26,15 @@
 
 export default {
   name: 'HeaderPage',
-  components: {
-
+  data() {
+    return {
+      searchString: '',
+    };
+  },
+  methods: {
+    search() {
+      this.$emit('search', this.searchString);
+    },
   },
 };
 </script>
@@ -34,7 +50,7 @@ export default {
   }
 
   header h1{
-    font-size: 4rem;
+    font-size: 3rem;
     color: rgb(136, 10, 10);
   }
 </style>

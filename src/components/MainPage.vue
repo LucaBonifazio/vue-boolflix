@@ -1,21 +1,21 @@
 <template>
   <main class="d-flex p-1">
     <div
-      v-if="arrMovies"
-      class="row row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-3 container"
+      v-if="movies"
+      class="row row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-3 container m-auto"
     >
       <CardPage
-        v-for="movie in arrMovies"
-        :key="movie.i"
-        :poster="movie.poster"
+        v-for="movie in movies"
+        :key="movie.id"
         :title="movie.title"
-        :author="movie.author"
-        :year="movie.year"
+        :original_title="movie.original_title"
+        :original_language="movie.original_language"
+        :vote_count="movie.vote_count"
       />
     </div>
     <div
       v-else
-      class="text-white"
+      class="text-white m-auto"
     >
       Loading, page is not ready...
     </div>
@@ -29,6 +29,9 @@ export default {
   name: 'MainPage',
   components: {
     CardPage,
+  },
+  props: {
+    movies: Array,
   },
 };
 </script>
