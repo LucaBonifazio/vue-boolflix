@@ -1,8 +1,9 @@
 <template>
   <div>
-    <HeaderPage @search="search" />
+    <HeaderPage @searchQuery="search" />
     <MainPage
       :movies="arrMovies"
+      :series="arrSeries"
       @search="search"
     />
   </div>
@@ -22,6 +23,7 @@ export default {
   data() {
     return {
       arrMovies: [],
+      arrSeries: [],
     };
   },
   methods: {
@@ -35,6 +37,17 @@ export default {
       })
         .then((axiosResponse) => {
           this.arrMovies = axiosResponse.data.results;
+          console.log(axiosResponse);
+        });
+      axios.get('https://api.themoviedb.org/3/search/tv', {
+        params: {
+          api_key: '931d96068b3048df68de10bf86fc9c5f',
+          language: 'it-IT',
+          query: value,
+        },
+      })
+        .then((axiosResponse) => {
+          this.arrSeries = axiosResponse.data.results;
           console.log(axiosResponse);
         });
     },

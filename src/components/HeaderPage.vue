@@ -2,22 +2,22 @@
   <header>
     <h1>BOOFLIX</h1>
     <div class="search_bar">
-      <label for="search">
-        <input
-          id="search"
-          v-model="searchString"
-          type="text"
-          name="search"
-          placeholder="Scrivi qui..."
-          @keyup.enter="search"
+      <form @submit.prevent="searchQuery">
+        <label for="query">
+          <input
+            id="query"
+            v-model="searchString"
+            type="text"
+            name="query"
+            placeholder="Scrivi qui..."
+          >
+        </label>
+        <button
+          class="btn btn-danger mx-1"
         >
-      </label>
-      <button
-        class="btn btn-danger mx-1"
-        @click="search"
-      >
-        Search
-      </button>
+          Search
+        </button>
+      </form>
     </div>
   </header>
 </template>
@@ -32,8 +32,8 @@ export default {
     };
   },
   methods: {
-    search() {
-      this.$emit('search', this.searchString);
+    searchQuery() {
+      this.$emit('searchQuery', this.searchString);
     },
   },
 };
@@ -44,7 +44,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px;
+    padding: .5rem;
     height: 10vh;
     background-color: rgb(32, 32, 32);
   }
