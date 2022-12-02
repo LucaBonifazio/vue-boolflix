@@ -8,7 +8,7 @@
         >
           <img
             class="img-fluid rounded h-100"
-            :src="`http://image.tmdb.org/t/p/w500/${serie.poster_path}`"
+            :src="`http://image.tmdb.org/t/p/w342/${serie.poster_path}`"
             :alt="serie.name"
           >
         </div>
@@ -34,13 +34,13 @@
             <strong>Voto:</strong>
             <i
               v-for="i in rate"
-              :key="i"
+              :key="('c'+ i)"
               class="fa-solid fa-star"
               :style="{color: 'gold'}"
             />
             <i
               v-for="i in (5 - rate)"
-              :key="i"
+              :key="('d'+ i)"
               class="fa-regular fa-star"
               :style="{color: 'gold'}"
             />

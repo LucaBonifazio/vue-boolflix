@@ -22,7 +22,7 @@
       Series
     </h1>
     <div
-      class="row row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-3 container m-auto"
+      class="row row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-3 container m-auto pb-5"
     >
       <CardSeriePage
         v-for="serie in series"
@@ -55,7 +55,7 @@ export default {
     height: 90vh;
     overflow: auto;
     -ms-overflow-style: none;
-  scrollbar-width: none;
+    scrollbar-width: none;
     background-color: rgb(37, 37, 37);
   }
   main::-webkit-scrollbar {

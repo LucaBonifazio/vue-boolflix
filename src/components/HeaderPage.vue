@@ -33,7 +33,7 @@ export default {
   },
   methods: {
     searchQuery() {
-      this.$emit('searchQuery', this.searchString);
+      this.$emit('queryValue', this.searchString);
     },
   },
 };
