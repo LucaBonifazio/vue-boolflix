@@ -37,7 +37,6 @@ export default {
       })
         .then((axiosResponse) => {
           this.arrMovies = axiosResponse.data.results;
-          console.log(axiosResponse);
         });
       axios.get('https://api.themoviedb.org/3/search/tv', {
         params: {
@@ -48,7 +47,6 @@ export default {
       })
         .then((axiosResponse) => {
           this.arrSeries = axiosResponse.data.results;
-          console.log(axiosResponse);
         });
     },
   },
@@ -57,4 +55,5 @@ export default {
 
 <style lang="scss">
    @import "~bootstrap/scss/bootstrap";
+
 </style>
