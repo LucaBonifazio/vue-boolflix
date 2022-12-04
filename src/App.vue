@@ -15,7 +15,7 @@
       v-else-if="(axiosEmpty == false && arrMovies.length == 0 && arrSeries.length == 0)"
       class="gif_box d-flex flex-column justify-content-center align-item-center container w-50"
     >
-      <h1 class="text-white">
+      <h1 class="text-white p-1">
         Non ho trovato quello che cercavi, aiutami a trovare il colpevole!!!
       </h1>
       <img

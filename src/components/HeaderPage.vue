@@ -1,6 +1,8 @@
 <template>
   <header>
-    <h1>BOOFLIX</h1>
+    <h1 class="p-1">
+      BOOFLIX
+    </h1>
     <div class="search_bar">
       <form @submit.prevent="searchQuery">
         <label for="query">
@@ -52,5 +54,10 @@ export default {
   header h1{
     font-size: 3rem;
     color: rgb(136, 10, 10);
+    &:hover {
+      cursor: pointer;
+      color: rgb(202, 16, 16);
+      transform: scale(1.1);
+    }
   }
 </style>
