@@ -22,7 +22,7 @@
       Series
     </h1>
     <div
-      class="row row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-3 container m-auto pb-5"
+      class="row row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-3 container m-auto pb-5"
     >
       <CardSeriePage
         v-for="serie in series"
